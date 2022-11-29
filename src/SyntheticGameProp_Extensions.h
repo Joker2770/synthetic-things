@@ -71,7 +71,7 @@ namespace SYNTHETIC_GAME
 			color = olc::Pixel(245, 245, 220);
 			radius = 1.7f;
 
-			audio_id = LoadAudio(".\\Sound\\destroy.wav");
+			audio_id = LoadAudio("./Sound/destroy.wav");
 		}
 
 		void Crash(b2Body* _self_, b2Body* crash_ball) override
@@ -108,8 +108,8 @@ namespace SYNTHETIC_GAME
 			color = olc::Pixel(240, 128, 128);
 			radius = 1.4f;
 
-			audio_id = LoadAudio(".\\Sound\\random.wav");
-			bell_audio_id = LoadAudio(".\\Sound\\random_bell.wav");
+			audio_id = LoadAudio("./Sound/random.wav");
+			bell_audio_id = LoadAudio("./Sound/random_bell.wav");
 		}
 
 		struct RandomClock

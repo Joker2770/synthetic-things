@@ -24,8 +24,8 @@
 */
 
 #include "SyntheticGame.h"
-#define PHOTO_LOAD_TEST1
-#define SOUND_LOAD_TEST1
+//#define PHOTO_LOAD_TEST1
+//#define SOUND_LOAD_TEST1
 
 #ifdef PHOTO_LOAD_TEST
 class PLTest : public olc::PixelGameEngine

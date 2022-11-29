@@ -161,9 +161,9 @@ inline void SYNTHETIC_GAME::SyntheticGameEngine::LoadProp(const String& picture_
 	new_prop->engine = this;
 
 	if (picture_file_name.empty())
-		new_prop->SetPropImagePath(GetPicturePath() + "\\" + new_prop->name + ".png");
+		new_prop->SetPropImagePath(GetPicturePath() + "/" + new_prop->name + ".png");
 	else
-		new_prop->SetPropImagePath(GetPicturePath() + "\\" + picture_file_name);
+		new_prop->SetPropImagePath(GetPicturePath() + "/" + picture_file_name);
 
 	props.push_back(new_prop);
 }

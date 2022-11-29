@@ -1,0 +1,6 @@
+[submodule "src/box2d"]
+	path = src/box2d
+	url = https://github.com/erincatto/box2d.git
+[submodule "src/olcPixelGameEngine"]
+	path = src/olcPixelGameEngine
+	url = https://github.com/OneLoneCoder/olcPixelGameEngine.git

@@ -30,7 +30,7 @@
 #include "box2d/box2d.h"
 
 #define OLC_PGEX_SOUND
-#include "olcPixelGameEngine/extensions/olcPGEX_Sound.h"
+#include "extensions/olcPGEX_Sound.h"
 
 namespace SYNTHETIC_GAME
 {

@@ -27,7 +27,7 @@
 #define _SYNTHETIC_GAME_SETTINGS_
 
 #define OLC_PGE_APPLICATION
-#include "olcPixelGameEngine/olcPixelGameEngine.h"
+#include "olcPixelGameEngine.h"
 
 namespace SYNTHETIC_GAME
 {

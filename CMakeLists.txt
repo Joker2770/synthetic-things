@@ -15,14 +15,14 @@ if(NOT TARGET box2d)
     add_subdirectory(src/box2d)
 endif()
 
-find_package (PkgConfig REQUIRED)
-
 # Check for ALSA libraries.
-pkg_check_modules (ALSA REQUIRED alsa)
+find_package(ALSA REQUIRED)
 find_package(OpenGL REQUIRED)
 # find_package(GLUT REQUIRED)
 find_package(PNG REQUIRED)
+if(UNIX)
 find_package(X11 REQUIRED)
+endif()
 
 set(POLICY CMP0072)
 
@@ -43,7 +43,9 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 target_link_libraries(${PROJECT_NAME} pthread)
 target_link_libraries(${PROJECT_NAME} box2d)
 target_link_libraries(${PROJECT_NAME} png)
+if(UNIX)
 target_link_libraries(${PROJECT_NAME} ${X11_LIBRARIES})
+endif()
 target_link_libraries(${PROJECT_NAME} ${ALSA_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES})
 # target_link_libraries(${PROJECT_NAME} ${GLUT_LIBRARIES})

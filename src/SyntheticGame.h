@@ -41,7 +41,7 @@ namespace SYNTHETIC_GAME
 		//MyGame->SetDifficulty(5.0f);
 
 		//设置游戏窗口名称
-		//MyGame->SetSGEName("Synthetic Game - By SYNTHETIC_GAME");
+		//MyGame->SetSGEName("Synthetic Things - By joker2770");
 
 		//设置窗口大小和对应到“物理世界”的尺寸
 		//MyGame->SetSGESize(400, 800);
@@ -53,7 +53,7 @@ namespace SYNTHETIC_GAME
 		//MyGame->SetColor(ColorArea::FontArea, olc::BLACK);
 
 		//设置图片路径
-		MyGame->SetPicturePath(".\\Picture");
+		MyGame->SetPicturePath("./Picture");
 		//MyGame->SetFileName(FileName::BackgroundName, "Background.png");
 		//MyGame->SetFileName(FileName::BallName, "");
 		//MyGame->SetFileName(FileName::LineName, "Line.png");
@@ -64,10 +64,10 @@ namespace SYNTHETIC_GAME
 		//MyGame->SetFileName(FileName::EffectFlowerBName, "FlowerB");
 
 		//加载音频
-		MyGame->LoadAudio(AudioName::SynthesisAudio, ".\\Sound\\synthesis.wav");
-		MyGame->LoadAudio(AudioName::DeadAudio, ".\\Sound\\dead.wav");
-		MyGame->LoadAudio(AudioName::BackgroundAudio, ".\\Sound\\background.wav");
-		MyGame->LoadAudio(AudioName::SuccessAudio, ".\\Sound\\success.wav");
+		MyGame->LoadAudio(AudioName::SynthesisAudio, "./Sound/synthesis.wav");
+		MyGame->LoadAudio(AudioName::DeadAudio, "./Sound/dead.wav");
+		MyGame->LoadAudio(AudioName::BackgroundAudio, "./Sound/background.wav");
+		MyGame->LoadAudio(AudioName::SuccessAudio, "./Sound/success.wav");
 
 		//加载道具
 		//注：道具加载的图片为 

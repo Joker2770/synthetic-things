@@ -30,7 +30,7 @@
 
 inline SYNTHETIC_GAME::SyntheticGameEngine::SyntheticGameEngine()
 {
-	sAppName = "Synthetic Game - By SYNTHETIC_GAME";
+	sAppName = "Synthetic Things - By joker2770";
 }
 
 inline SYNTHETIC_GAME::SyntheticGameEngine::~SyntheticGameEngine()

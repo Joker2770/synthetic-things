@@ -50,9 +50,9 @@ target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES})
 
 # Install
 if(UNIX)
-	set(CMAKE_INSTALL_PREFIX /usr/local)
-	install(TARGETS ${PROJECT_NAME} DESTINATION bin)
-	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/res DESTINATION bin)
+	set(CMAKE_INSTALL_PREFIX /usr/local/share/games)
+	install(TARGETS ${PROJECT_NAME} DESTINATION synthetic-things)
+	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/res DESTINATION synthetic-things)
 elseif(WIN32)
 	set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/")
 	install(TARGETS ${PROJECT_NAME} DESTINATION synthetic-things)

@@ -41,7 +41,7 @@ namespace SYNTHETIC_GAME
 		//MyGame->SetDifficulty(5.0f);
 
 		//设置游戏窗口名称
-		//MyGame->SetSGEName("Synthetic Things - By joker2770");
+		MyGame->SetSGEName("Synthetic Things - By joker2770");
 
 		//设置窗口大小和对应到“物理世界”的尺寸
 		//MyGame->SetSGESize(400, 800);
@@ -54,14 +54,14 @@ namespace SYNTHETIC_GAME
 
 		//设置图片路径
 		MyGame->SetPicturePath("./Picture");
-		//MyGame->SetFileName(FileName::BackgroundName, "Background.png");
-		//MyGame->SetFileName(FileName::BallName, "");
-		//MyGame->SetFileName(FileName::LineName, "Line.png");
-		//MyGame->SetFileName(FileName::BallBehindName, "png");
-		//MyGame->SetFileName(FileName::SuccessName, "Success.png");
-		//MyGame->SetFileName(FileName::EffectWaterName, "Water");
-		//MyGame->SetFileName(FileName::EffectFlowerAName, "FlowerA");
-		//MyGame->SetFileName(FileName::EffectFlowerBName, "FlowerB");
+		MyGame->SetFileName(FileName::BackgroundName, "Background.png");
+		MyGame->SetFileName(FileName::BallName, "");
+		MyGame->SetFileName(FileName::LineName, "Line.png");
+		MyGame->SetFileName(FileName::BallBehindName, "png");
+		MyGame->SetFileName(FileName::SuccessName, "Success.png");
+		MyGame->SetFileName(FileName::EffectWaterName, "Water");
+		MyGame->SetFileName(FileName::EffectFlowerAName, "FlowerA");
+		MyGame->SetFileName(FileName::EffectFlowerBName, "FlowerB");
 
 		//加载音频
 		MyGame->LoadAudio(AudioName::SynthesisAudio, "./Sound/synthesis.wav");

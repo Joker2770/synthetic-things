@@ -21,7 +21,7 @@ summary: A fantastic factory to make synthetic fruits. # 79 char long summary
 description: |
   A fantastic factory to make synthetic fruits.
 
-  _More build details: https://github.com/Joker2770/synthetic-things_
+  _More build details: https://github.com/Joker2770/synthetic-things.git_
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
@@ -41,7 +41,7 @@ plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
     interface: content
     target: $SNAP/data-dir/sounds
     default-provider: gtk-common-themes
-  
+
 apps:
   synthetic-things:
     command-chain: ["snap/command-chain/alsa-launch"]
@@ -64,7 +64,7 @@ apps:
       - unity7
       - x11
       - gsettings
-        
+
 layout:
   /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
     bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
@@ -74,7 +74,7 @@ layout:
     bind: $SNAP/usr/share/alsa
   /etc/fonts:
     bind: $SNAP/etc/fonts
-    
+
 parts:
   alsa-mixin:
     plugin: dump
@@ -106,8 +106,6 @@ parts:
       - libxi-dev
       - libxinerama-dev
       - libxcursor-dev
-      - libxcursor-dev
-  
     stage-packages:
       - libasound2
       - libglu1-mesa

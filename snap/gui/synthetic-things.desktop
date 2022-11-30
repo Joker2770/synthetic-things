@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=0.0.1
+Encoding=UTF-8
+Name=synthetic-things
+Comment=A fantastic factory to make synthetic fruits.
+Exec=synthetic-things
+Terminal=false
+Type=Application
+Categories=Game
+Icon=${SNAP}/meta/gui/synthetic-things.png

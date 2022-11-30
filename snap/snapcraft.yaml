@@ -25,8 +25,11 @@ description: |
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
-
-base: core18
+base: core20
+architectures:
+  - build-on: amd64
+  - build-on: armhf
+  - build-on: arm64
 
 plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
   gtk-3-themes:
@@ -53,7 +56,7 @@ apps:
       # PULSE_SYSTEM: 1
       # PULSE_RUNTIME_PATH: /var/run/pulse
       # PULSE_SERVER: unix:$XDG_RUNTIME_DIR/../pulse/native
-    extensions: [gnome-3-28]
+    extensions: [gnome-3-38]
     plugs:
       - audio-playback
       - pulseaudio

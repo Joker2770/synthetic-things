@@ -4,7 +4,7 @@
 
 A fantastic factory to make synthetic fruits.
 
-## build
+## Build
 - build on ubuntu.
 
 _install dependencies first_
@@ -34,3 +34,8 @@ cd synthetic-things/msvc
 ~~~
 
 build with visual studio.
+
+## Thanks
+
+* [Synthetic-Game](https://github.com/YYYCZ/Synthetic-Game)
+

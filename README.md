@@ -10,7 +10,7 @@ build on ubuntu.
 _install dependencies first_
 
 ~~~
-sudo apt install libasound2-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev libxinerama-dev libxcursor-dev libxcursor-dev
+sudo apt install libasound2-dev libglu1-mesa-dev libpng-dev libx11-dev libxrandr-dev libxi-dev libxinerama-dev libxcursor-dev libxcursor-dev
 ~~~
 
 clone and build

@@ -104,6 +104,7 @@ parts:
       - make
       - libasound2-dev 
       - libglu1-mesa-dev
+      - libpng-dev
       - libx11-dev
       - libxrandr-dev
       - libxi-dev
@@ -112,6 +113,7 @@ parts:
     stage-packages:
       - libasound2
       - libglu1-mesa
+      - libpng16-16
       - libx11-6
       - libxrandr2
       - libxinerama1

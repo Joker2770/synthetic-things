@@ -27,8 +27,9 @@ grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 base: core20
 architectures:
-  - build-on: ppc64el
-  - build-on: s390x
+  - build-on: amd64
+  - build-on: armhf
+  - build-on: arm64
 
 plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
   gtk-3-themes:
@@ -46,7 +47,7 @@ plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
 
 apps:
   synthetic-things:
-    command-chain: ["snap/command-chain/alsa-launch", "bin/desktop-launch"]
+    command-chain: ["snap/command-chain/alsa-launch"]
     command: usr/local/share/games/synthetic-things/synthetic-things
     environment:
       # pulseaudio
@@ -55,6 +56,7 @@ apps:
       # PULSE_SYSTEM: 1
       # PULSE_RUNTIME_PATH: /var/run/pulse
       # PULSE_SERVER: unix:$XDG_RUNTIME_DIR/../pulse/native
+    extensions: [gnome-3-38]
     plugs:
       - audio-playback
       - pulseaudio
@@ -77,17 +79,7 @@ layout:
     bind: $SNAP/etc/fonts
 
 parts:
-  desktop-glib-only:
-    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
-    source-subdir: glib-only
-    plugin: make
-    build-packages:
-      - libglib2.0-dev
-    stage-packages:
-      - libglib2.0-bin
-
   alsa-mixin:
-    after: [desktop-glib-only]
     plugin: dump
     source: https://github.com/diddlesnaps/snapcraft-alsa.git
     source-subdir: snapcraft-assets

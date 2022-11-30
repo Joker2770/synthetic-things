@@ -5,7 +5,7 @@
 A fantastic factory to make synthetic fruits.
 
 ## build
-build on ubuntu.
+- build on ubuntu.
 
 _install dependencies first_
 
@@ -25,7 +25,7 @@ cmake ..
 make
 ~~~
 
-build on Windows.
+- build on Windows.
 
 ~~~
 git clone https://github.com/Joker2770/synthetic-things.git --recursive

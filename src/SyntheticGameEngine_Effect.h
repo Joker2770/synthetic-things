@@ -257,7 +257,6 @@ inline void SYNTHETIC_GAME::SyntheticGameEngine::SGEDrawSEffect()
 
 	for (auto& s_effect : seffect_list)
 	{
-		//绘制 水 效果
 		if (s_effect.water != nullptr)
 		{
 			DrawRotatedDecal(s_effect.pos, s_effect.water,
@@ -266,7 +265,6 @@ inline void SYNTHETIC_GAME::SyntheticGameEngine::SGEDrawSEffect()
 				olc::Pixel(255, 255, 255, s_effect.alpha));
 		}
 
-		//绘制 花瓣 效果
 		if (s_effect.flower1 != nullptr)
 		{
 			for (auto& x : s_effect.centers)
@@ -292,15 +290,11 @@ inline void SYNTHETIC_GAME::SyntheticGameEngine::SGEEffect(float fElapsedTime)
 		{
 			s_effect.clock -= fElapsedTime;
 
-			//水效果的处理（渐隐处理）
 			if (s_effect.water != nullptr)
 			{
 				s_effect.alpha += s_effect.step * fElapsedTime;
 			}
 
-			//花瓣效果的处理
-			//花瓣扩散、自转、略微渐隐 -> 扩散到最大半径消失
-			//临界点刚好是 half_clock
 			if (s_effect.flower1 != nullptr || s_effect.flower2 != nullptr)
 			{
 				if (s_effect.clock > s_effect.half_clock)

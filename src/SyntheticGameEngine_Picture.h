@@ -33,7 +33,6 @@ void SYNTHETIC_GAME::SyntheticGameEngine::LoadPictures(const String& path)
 	if (path.empty())
 		return;
 
-	//清除已加载的图片
 	ClearPictures();
 	pictures_center.clear();
 	pictures_2inv.clear();
@@ -66,7 +65,7 @@ void SYNTHETIC_GAME::SyntheticGameEngine::LoadPictures(const String& path)
 		for (int32_t i = 0; i < BallTypeNum; i++)
 		{
 			sprintf(string_buf, "%d", i);
-			if (load_func(path + "\\" + file_name + String(string_buf) + "." + BehindName, new_decal))
+			if (load_func(path + "/" + file_name + String(string_buf) + "." + BehindName, new_decal))
 			{
 				last_index = i;
 				picture_vec.push_back(new_decal);
@@ -79,7 +78,7 @@ void SYNTHETIC_GAME::SyntheticGameEngine::LoadPictures(const String& path)
 			else if (last_index != -1)
 			{
 				sprintf(string_buf, "%d", last_index);
-				if (load_func(path + "\\" + file_name + String(string_buf) + "." + BehindName, new_decal))
+				if (load_func(path + "/" + file_name + String(string_buf) + "." + BehindName, new_decal))
 				{
 					picture_vec.push_back(new_decal);
 
@@ -98,26 +97,21 @@ void SYNTHETIC_GAME::SyntheticGameEngine::LoadPictures(const String& path)
 
 	olc::Decal* new_decal;
 
-	//加载球体的图片
 	vec_load_func(BallPicturesName, pictures, pictures_center, &pictures_2inv);
 
-	//加载背景图
-	if (load_func(path + "\\" + BackgroundPictureName, background))
+	if (load_func(path + "/" + BackgroundPictureName, background))
 		backgroud_scale = { SGE_Width_f / background->sprite->width ,
 			SGE_Height_f / background->sprite->height };
 
-	//加载死亡判定线图
-	if (load_func(path + "\\" + LinePictureName, line))
+	if (load_func(path + "/" + LinePictureName, line))
 		line_scale = { SGE_Width_f / line->sprite->width , 1.0f };
 
-	//加载胜利闪光图
-	if (load_func(path + "\\" + SuccessPictureName, success))
+	if (load_func(path + "/" + SuccessPictureName, success))
 	{
 		float sq_inv = sqrtf(SGE_Width_f * SGE_Height_f) / sqrtf(success->sprite->width * success->sprite->height);
 		success_scale = { sq_inv  , sq_inv };
 	}
 
-	//加载特效图
 	vec_load_func(FlowerAName, effect_flower1, effect_flower1_center);
 	vec_load_func(FlowerBName, effect_flower2, effect_flower2_center);
 	vec_load_func(WaterName, effect_water, effect_water_center);

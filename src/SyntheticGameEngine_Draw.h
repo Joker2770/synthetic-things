@@ -30,18 +30,15 @@
 
 void SYNTHETIC_GAME::SyntheticGameEngine::SGEDrawWindows()
 {
-	//绘制背景层
 	if (background != nullptr)
 	{
 		SetDrawTarget(2);
 		DrawDecal({ 0.0f,0.0f }, background, backgroud_scale);
 	}
 
-	//绘制球层
 	SetDrawTarget(1);
 	Clear(olc::BLANK);
 
-	//死亡判定线的绘制
 	if (line == nullptr)
 	{
 		DrawLine(0, SGE_Line, SGE_Width, SGE_Line, olc::VERY_DARK_MAGENTA);
@@ -51,7 +48,6 @@ void SYNTHETIC_GAME::SyntheticGameEngine::SGEDrawWindows()
 		DrawDecal({ 0,SGE_Line_f }, line, line_scale);
 	}
 
-	//普通圆体的绘制
 	b2Body* body = m_world->GetBodyList();
 	int32_t body_num = m_world->GetBodyCount();
 	if (pictures.empty())
@@ -110,14 +106,12 @@ void SYNTHETIC_GAME::SyntheticGameEngine::SGEDrawWindows()
 		}
 	}
 
-	//道具的绘制
 	for (auto x : prop_body)
 	{
 		BodyInfo* info = (BodyInfo*)(x->GetUserData().pointer);
 		info->prop->Draw(x);
 	}
 
-	//快速移动效果绘制
 	for (auto& x : quick_move_list)
 	{
 		if (x.picture == nullptr)
@@ -143,10 +137,8 @@ void SYNTHETIC_GAME::SyntheticGameEngine::SGEDrawWindows()
 		}
 	}
 
-	//合成效果绘制
 	SGEDrawSEffect();
 
-	//胜利闪光效果绘制
 	if (success_effect.clock > 0.0f)
 	{
 		olc::vf2d center{ SGE_Width_f * 0.5f, SGE_Height_f * 0.5f };
@@ -184,7 +176,6 @@ void SYNTHETIC_GAME::SyntheticGameEngine::SGEDrawWindows()
 		}
 	}
 
-	//绘制字体层
 	SetDrawTarget(uint8_t(0));
 
 	Clear(olc::BLANK);

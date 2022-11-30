@@ -30,11 +30,6 @@
 
 namespace SYNTHETIC_GAME
 {
-	//变换球
-	//可以变成所接触球体的大小
-	//但是最大不能超过随机生成的球
-	//所有接触到大于该大小的球无变化
-	//并且该球不能合成
 	class PropChange :
 		public SyntheticGameProp
 	{
@@ -57,8 +52,6 @@ namespace SYNTHETIC_GAME
 		}
 	};
 
-	//破坏球
-	//破坏一切球体
 	class PropDestroy :
 		public SyntheticGameProp
 	{
@@ -91,10 +84,6 @@ namespace SYNTHETIC_GAME
 		}
 	};
 
-	//随机球
-	//扔下三秒后
-	//随机变成场上存在的一种普通球
-	//场上没有球则变成最低级球
 	class PropRandom :
 		public SyntheticGameProp
 	{
@@ -190,9 +179,6 @@ namespace SYNTHETIC_GAME
 		}
 	};
 
-	//反重力球
-	//接触到的普通球将失重
-	//直到其被合成或破坏
 	class PropGravity :
 		public SyntheticGameProp
 	{
@@ -217,10 +203,6 @@ namespace SYNTHETIC_GAME
 		}
 	};
 
-	//融合球
-	//碰撞到某个普通球后
-	//在场上寻找同类型的球合成
-	//若没有找到则无效，该球继续留在场上
 	class PropFuse :
 		public SyntheticGameProp
 	{

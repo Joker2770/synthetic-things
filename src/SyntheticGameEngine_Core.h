@@ -74,22 +74,15 @@ void SYNTHETIC_GAME::SyntheticGameEngine::MouseDown(const b2Vec2& p)
 
 bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserCreate()
 {
-	//加载图片
 	LoadPictures(picture_path);
 
-	//再创建两个图层
-	//总共三个图层：字体层、球层、背景层
-
-	//字体层（最上层）
 	Clear(olc::BLANK);
 
-	//球层
 	uint32_t layer_index = CreateLayer();
 	EnableLayer(layer_index, true);
 	SetDrawTarget(layer_index);
 	Clear(olc::BLANK);
 
-	//背景层
 	layer_index = CreateLayer();
 	EnableLayer(layer_index, true);
 	SetDrawTarget(layer_index);
@@ -102,13 +95,11 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserCreate()
 		Clear(BackGroundColor);
 	}
 
-	//创建一个物理世界
 	if (m_world != nullptr)
 		delete m_world;
 	m_world = new b2World(b2Vec2(0.0f, B2_Gravity));
 	m_world->SetContactListener(this);
 
-	//塑造物理世界
 	b2BodyDef body_def;
 	BodyInfo* new_info = new BodyInfo(-2);
 	body_def.userData.pointer = (uintptr_t)new_info;
@@ -128,12 +119,10 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserCreate()
 
 	CreateNewBall();
 
-	//播放音频
 	olc::SOUND::InitialiseAudio();
 	if (AudioId[int(AudioName::BackgroundAudio)] != -1)
 		olc::SOUND::PlaySample(AudioId[int(AudioName::BackgroundAudio)]);
 
-	//道具初始化
 	for (auto x : props)
 		x->GameStart();
 
@@ -142,41 +131,33 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserCreate()
 
 bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserUpdate(float fElapsedTime)
 {
-	//暂停
 	if (!IsFocused())
 	{
 		SGEDrawWindows();;
 		return true;
 	}
 
-	//闪烁效果
 	if (!flash_list.empty())
 		SGEFlash(fElapsedTime);
 
-	//快速移动效果
 	if (!quick_move_list.empty())
 		SGEQuickMove(fElapsedTime);
 
-	//伸缩效果
 	if (!stretch_list.empty())
 		SGEStretch(fElapsedTime);
 
-	//合成效果
 	if (!seffect_list.empty())
 		SGEEffect(fElapsedTime);
 
-	//胜利闪光
 	if (success_effect.clock > 0.0f)
 		SGESuccess(fElapsedTime);
 
-	//是否已经死亡
 	if (dead)
 	{
-		//死亡爆裂效果
 		if (dead_bomb_clock > 0.0f)
 			dead_bomb_clock -= fElapsedTime;
 
-		if (flash_list.empty() //保证死亡闪烁结束后再进行爆炸
+		if (flash_list.empty()
 			&& m_world->GetBodyCount() > 3 + int32_t(next_ball != nullptr)
 			&& dead_bomb_clock <= 0.0f)
 			dead_bomb_clock = DeadBombTime,
@@ -186,7 +167,6 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserUpdate(float fElapsedTime)
 		return true;
 	}
 
-	//计时器的处理
 	if (rebuild_time > 0.0f)
 	{
 		rebuild_time -= fElapsedTime;
@@ -221,7 +201,6 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserUpdate(float fElapsedTime)
 		dead_clock = DeadTime;
 	}
 
-	//处理鼠标事件
 	b2Vec2 mouse_move(GetMouseX() / SGE_Scale_B2, GetMouseY() / SGE_Scale_B2);
 	if (mouse_move != last_mouse)
 	{
@@ -233,10 +212,8 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserUpdate(float fElapsedTime)
 		MouseDown(mouse_move);
 	}
 
-	//物理世界“时间流动”
 	m_world->Step(fElapsedTime, 8, 3);
 
-	//破坏预处理
 	if (!destroy_list.empty())
 	{
 		for (auto x : destroy_list)
@@ -246,13 +223,10 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserUpdate(float fElapsedTime)
 		destroy_list.clear();
 	}
 
-	//道具计时处理
 	PropEvent(fElapsedTime);
 
-	//进行合成
 	SyntheticOperation();
 
-	//更新窗口
 	SGEDrawWindows();
 
 	return true;

@@ -48,7 +48,7 @@ plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
 apps:
   synthetic-things:
     command-chain: ["snap/command-chain/alsa-launch"]
-    command: usr/local/share/games/synthetic-things/synthetic-things
+    command: usr/local/share/games/synthetic-things/launcher.sh
     environment:
       # pulseaudio
       LD_LIBRARY_PATH: ${SNAP}/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
@@ -120,3 +120,7 @@ parts:
       - libxi6
       - libxcursor1
       - libpulse0
+    override-stage: |
+      cd $SNAPCRAFT_PART_INSTALL
+      chmod +x ${SNAPCRAFT_PART_INSTALL}/usr/local/share/games/synthetic-things/launcher.sh
+      snapcraftctl stage

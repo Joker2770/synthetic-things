@@ -130,5 +130,5 @@ parts:
       - libpulse0
     override-stage: |
       cd $SNAPCRAFT_PART_INSTALL
-      chmod +x ${SNAPCRAFT_PART_INSTALL}/usr/local/share/games/synthetic-things/launcher.sh
+      chmod +x usr/local/share/games/synthetic-things/launcher.sh
       snapcraftctl stage

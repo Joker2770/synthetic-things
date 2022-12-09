@@ -37,5 +37,6 @@ build with visual studio.
 
 ## Thanks
 
+* [olcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine.git)
+* [box2d](https://github.com/erincatto/box2d.git)
 * [Synthetic-Game](https://github.com/YYYCZ/Synthetic-Game)
-

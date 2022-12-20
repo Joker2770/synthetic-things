@@ -246,7 +246,6 @@ bool SYNTHETIC_GAME::SyntheticGameEngine::OnUserDestroy()
 
 	last_mouse = b2Vec2_zero;
 
-	touch_balls;
 	next_ball = nullptr;
 	score = 0;
 	dead = false;

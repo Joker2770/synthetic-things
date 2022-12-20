@@ -31,6 +31,7 @@
 inline SYNTHETIC_GAME::SyntheticGameEngine::SyntheticGameEngine()
 {
 	sAppName = "Synthetic Things - By joker2770";
+	memset(string_buf, 0, sizeof(string_buf));
 }
 
 inline SYNTHETIC_GAME::SyntheticGameEngine::~SyntheticGameEngine()

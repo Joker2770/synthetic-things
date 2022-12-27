@@ -47,7 +47,7 @@ public:
 	{
 		String file_name;
 
-		if (std::cout << "Please Input Picture Load Path:" << std::endl && std::cin >> file_name)
+		if (std::cout << "Please Input Picture Path to load:" << std::endl && std::cin >> file_name)
 		{
 			spr_test = new olc::Sprite;
 			if (spr_test->LoadFromFile(file_name) == olc::rcode::OK)
@@ -57,12 +57,12 @@ public:
 				std::cout << ScreenHeight() << std::endl;
 				scale = {ScreenWidth() / float(dec_test->sprite->width),
 						 ScreenHeight() / float(dec_test->sprite->height)};
-				std::cout << "Open pictures successful!" << std::endl;
+				std::cout << "Open picture successful!" << std::endl;
 				return true;
 			}
 		}
 
-		std::cout << "Open pictures failed!" << std::endl;
+		std::cout << "Open picture failed!" << std::endl;
 		return false;
 	}
 
@@ -86,7 +86,9 @@ public:
 		return true;
 	}
 };
-#elif SOUND_LOAD_TEST
+#endif
+
+#ifdef SOUND_LOAD_TEST
 class WAVTest : public olc::PixelGameEngine
 {
 	using String = std::string;
@@ -103,20 +105,20 @@ public:
 	bool OnUserCreate() override
 	{
 		String wave_path;
-		olc::SOUND::InitialiseAudio(44100U, 2U);
+		olc::SOUND::InitialiseAudio(44100U);
 
-		if (std::cin >> wave_path)
+		if (std::cout << "Please Input audio Path to load:" << std::endl && std::cin >> wave_path)
 		{
 			WavId = olc::SOUND::LoadAudioSample(wave_path);
 			if (WavId != -1)
 			{
-				std::cout << "Load audio files successul!" << std::endl;
+				std::cout << "Load audio file successul!" << std::endl;
 				olc::SOUND::PlaySample(WavId, true);
 				return true;
 			}
 		}
 
-		std::cout << "Load audio files failed!" << std::endl;
+		std::cout << "Load audio file failed!" << std::endl;
 		return false;
 	}
 

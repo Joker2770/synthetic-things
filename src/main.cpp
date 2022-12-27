@@ -129,7 +129,7 @@ public:
 
 	bool OnUserDestroy() override
 	{
-		olc::SOUND::DestroyAudio();
+		return olc::SOUND::DestroyAudio();
 	}
 };
 #endif
@@ -146,7 +146,7 @@ int main()
 	if (Test.Construct(100, 100, 1, 1))
 		Test.Start();
 #else
-#pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
+//#pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
 	SYNTHETIC_GAME::GameStart();
 #endif
 #endif

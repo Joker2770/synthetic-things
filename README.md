@@ -1,5 +1,6 @@
 # synthetic-things
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7a0442bc1a10468eabd565c006a0c0e1)](https://app.codacy.com/gh/Joker2770/synthetic-things?utm_source=github.com&utm_medium=referral&utm_content=Joker2770/synthetic-things&utm_campaign=Badge_Grade_Settings)
 [![synthetic-things](https://snapcraft.io/synthetic-things/badge.svg)](https://snapcraft.io/synthetic-things)
 
 A fantastic factory to make synthetic fruits.

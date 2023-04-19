@@ -21,5 +21,5 @@
 # ***************************************************************************/
 #!/bin/bash
 
-cd $SNAP/usr/local/share/games/synthetic-things
-$SNAP/usr/local/share/games/synthetic-things/synthetic-things
+cd "$SNAP/usr/local/share/games/synthetic-things"
+"$SNAP/usr/local/share/games/synthetic-things/synthetic-things"

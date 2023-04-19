@@ -6,7 +6,7 @@
 A fantastic factory to make synthetic fruits.
 
 ## Build
-- build on ubuntu.
+  - build on ubuntu.
 
 _install dependencies first_
 
@@ -26,7 +26,7 @@ cmake ..
 make
 ~~~
 
-- build on Windows.
+  - build on Windows.
 
 ~~~
 git clone https://github.com/Joker2770/synthetic-things.git --recursive
@@ -38,6 +38,6 @@ build with visual studio.
 
 ## Thanks
 
-* [olcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine.git)
-* [box2d](https://github.com/erincatto/box2d.git)
-* [Synthetic-Game](https://github.com/YYYCZ/Synthetic-Game)
+  * [olcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine.git)
+  * [box2d](https://github.com/erincatto/box2d.git)
+  * [Synthetic-Game](https://github.com/YYYCZ/Synthetic-Game)
